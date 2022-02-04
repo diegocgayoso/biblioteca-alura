@@ -1,3 +1,4 @@
+import { Biblioteca } from './../models/lib.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { AddBooksService } from '../services/addBooks.service';
 
@@ -13,7 +14,12 @@ export class LivrosComponent implements OnInit {
   constructor(private service: AddBooksService) { }
 
   ngOnInit(){
-    this.dadosLivrosAdd = this.service.LivrosAdd;
+    // this.dadosLivrosAdd = this.service.LivrosAdd;
+    this.service.livros().subscribe((listaLivros: Biblioteca[]) =>
+    {
+      console.log(listaLivros);
+      this.dadosLivrosAdd = listaLivros;
+    })
   }
 
 }

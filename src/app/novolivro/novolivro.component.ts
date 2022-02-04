@@ -1,4 +1,7 @@
+import { Biblioteca } from './../models/lib.model';
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AddBooksService } from '../services/addBooks.service';
 
 @Component({
   selector: 'app-novolivro',
@@ -14,16 +17,26 @@ export class NovolivroComponent implements OnInit {
   autor: string = '';
   descricao: string = '';
 
-  constructor() {}
+  constructor(private service: AddBooksService) {}
 
   addLivro() {
     console.log('Novo livro foi adicionado!');
-    const dadosLivro = {titulo: this.titulo, autor: this.autor, descricao: this.descricao}
-    this.submitAdd.emit(dadosLivro);
+
+    const dadosLivro: Biblioteca = {
+      titulo: this.titulo,
+      autor: this.autor,
+      descricao: this.descricao,
+    };
+
+    this.service.adicionar(dadosLivro).subscribe((result) => {
+      console.log(result);
+      this.limparCampos();
+    },(error)=> console.error(error));
     this.limparCampos();
+
   }
 
-  limparCampos(){
+  limparCampos() {
     this.titulo = '';
     this.autor = '';
     this.descricao = '';

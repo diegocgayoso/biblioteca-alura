@@ -11,9 +11,4 @@ export class AppComponent {
   title = 'biblioteca-angular';
 
   constructor(private serivce: AddBooksService){}
-
-  adicionar($event: any){
-    console.log($event);
-    this.serivce.adicionar($event);
-  }
 }

@@ -1,0 +1,28 @@
+{
+  "biblioteca": [
+    {
+      "id": "1",
+      "titulo": "Akka & Akka Streams",
+      "autor": "Alexandre Lourenço",
+      "descricao": "Construa sistemas distribuídos com atores"
+    },
+    {
+      "id": "2",
+      "titulo": "Pentest em aplicações web",
+      "autor": "José Augusto de Almeida Jr.",
+      "descricao": "Avalie a segurança contra ataques web com testes de invasão no Kali Linux"
+    },
+    {
+      "id": "3",
+      "titulo": "Arquitetura de software distribuído",
+      "autor": "Flávio Lisboa",
+      "descricao": "Boas práticas para um mundo de microsserviços"
+    },
+    {
+      "titulo": "autor 1",
+      "autor": "autor1",
+      "descricao": "autor 1",
+      "id": "0IRLJ84"
+    }
+  ]
+}
