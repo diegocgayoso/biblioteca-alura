@@ -1,6 +1,6 @@
-<p>Livros da Casa do Código</p>
+<h2>Livros da Casa do Código</h2>
 
-<div class="row">
+<div class="row" *ngIf="dadosLivrosAdd.length > 0; else noLivros">
   <div class="card green" *ngFor="let item of dadosLivrosAdd">
     <h2>{{item.titulo}}</h2>
     <p>{{item.autor}}</p>
@@ -20,3 +20,8 @@
     <p>{{descricao}}</p>
   </div> -->
 </div>
+<ng-template #noLivros>
+  <div class=" row">
+    <p class=" card">Sem livros cadastrados.</p>
+  </div>
+</ng-template>
