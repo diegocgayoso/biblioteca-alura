@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddBooksService } from './services/addBooks.service';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +10,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'biblioteca-angular';
 
-  titulo: string = '';
-  autor: string = '';
-  descricao: string = '';
-
-  dadosLivrosAdd: any = [] = [];
+  constructor(private serivce: AddBooksService){}
 
   adicionar($event: any){
     console.log($event);
-
-    const livroInfos = {...$event, data: new Date()}
-    this.dadosLivrosAdd.push(livroInfos);
+    this.serivce.adicionar($event);
   }
 }
