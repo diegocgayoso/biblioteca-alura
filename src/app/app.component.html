@@ -1,3 +1,6 @@
 <h1>Biblioteca Casa do Código</h1>
 
-<app-novolivro ></app-novolivro>
+<app-novolivro (submitAdd)="adicionar($event)"></app-novolivro>
+
+<app-livros [dadosLivrosAdd]="dadosLivrosAdd"></app-livros>
+

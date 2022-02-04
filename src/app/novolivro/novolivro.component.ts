@@ -20,6 +20,13 @@ export class NovolivroComponent implements OnInit {
     console.log('Novo livro foi adicionado!');
     const dadosLivro = {titulo: this.titulo, autor: this.autor, descricao: this.descricao}
     this.submitAdd.emit(dadosLivro);
+    this.limparCampos();
+  }
+
+  limparCampos(){
+    this.titulo = '';
+    this.autor = '';
+    this.descricao = '';
   }
   ngOnInit(): void {}
 }
