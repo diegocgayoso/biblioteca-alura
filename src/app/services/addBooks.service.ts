@@ -22,8 +22,6 @@ export class AddBooksService {
     return this.httpClient.get<Biblioteca[]>(this.url);
   }
 
-
-
   adicionar(newBook: Biblioteca): Observable<Biblioteca>{
     return this.httpClient.post<Biblioteca>(this.url, newBook);
   }

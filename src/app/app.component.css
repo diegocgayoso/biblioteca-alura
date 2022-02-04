@@ -1,0 +1,17 @@
+nav {
+  background-color: rgb(26, 26, 26);
+  padding: 20px 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+nav .ativo {
+  display: none;
+}
+main {
+  padding: var(--padding);
+}
