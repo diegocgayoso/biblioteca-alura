@@ -34,7 +34,7 @@ export class AddBooksService {
   deletarLivro(idLivro: any) {
     const livroDelete = this.url + '/' + idLivro;
     return this.http.delete(livroDelete)
-      .subscribe((data)=> {console.log(data)})
+    .subscribe((data)=> {console.log(data)})
   }
 
   editar(){

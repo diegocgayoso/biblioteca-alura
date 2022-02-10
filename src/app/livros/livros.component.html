@@ -1,7 +1,7 @@
 <h2>Livros da Casa do Código</h2>
 
-<div class="row" *ngIf="dadosLivrosAdd.length > 0; else semLivros">
-  <div class="card" *ngFor="let item of dadosLivrosAdd">
+<div class="row" *ngIf="dadosLivros.length > 0; else semLivros">
+  <div class="card" *ngFor="let item of dadosLivros">
     <h2>{{item.titulo}}</h2>
     <p>{{item.autor}}</p>
     <p>{{item.descricao}}</p>
