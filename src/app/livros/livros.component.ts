@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Biblioteca } from './../models/lib.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { AddBooksService } from '../services/addBooks.service';
@@ -11,15 +12,37 @@ export class LivrosComponent implements OnInit {
 
   dadosLivrosAdd: any = [];
 
-  constructor(private service: AddBooksService) { }
+  constructor(private service: AddBooksService) {
+  }
+
+  getAllBooks(): void {
+    this.service.showLivros()
+      .subscribe(
+        (books: any) => {
+          this.dadosLivrosAdd = books;
+        },
+        (error: any) => {
+          console.log(error);
+        });
+  }
 
   ngOnInit(){
-    // this.dadosLivrosAdd = this.service.LivrosAdd;
-    this.service.livros().subscribe((listaLivros: Biblioteca[]) =>
-    {
-      console.log(listaLivros);
-      this.dadosLivrosAdd = listaLivros;
-    })
+    this.getAllBooks();
   }
+
+  editar(){
+    this.service.editar();
+  }
+
+  deletar(id: any){
+    console.log(id)
+    this.service.deletarLivro(id)
+    setInterval(() => {
+      this.getAllBooks();
+    },2000)
+    this.getAllBooks();
+  }
+
+
 
 }

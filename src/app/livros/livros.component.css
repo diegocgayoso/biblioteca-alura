@@ -2,23 +2,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .card {
   border-radius: 5px;
+  background: #5555558e;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.74);
   padding: 30px;
   margin: 20px;
-  width: 400px;
+  width: 320px;
+  min-width: 250px;
+  height: 400px;
   transition: all 0.3s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  cursor: pointer;
 }
 
 .card p {
   color: #a3a5ae;
   font-size: 16px;
+}
+
+button {
+  box-shadow: rgb(0 0 0 / 17%) 0px -23px 25px 0px inset, rgb(0 0 0 / 15%) 0px -36px 30px 0px inset, rgb(0 0 0 / 10%) 0px -79px 40px 0px inset, rgb(0 0 0 / 6%) 0px 2px 1px, rgb(0 0 0 / 9%) 0px 4px 2px, rgb(0 0 0 / 9%) 0px 8px 4px, rgb(0 0 0 / 9%) 0px 16px 8px, rgb(0 0 0 / 9%) 0px 32px 16px;
+    background: #ff9900;
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
 }
