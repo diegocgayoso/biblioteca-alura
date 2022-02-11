@@ -9,12 +9,11 @@ import { AddBooksService } from '../services/addBooks.service';
 })
 export class LivrosComponent implements OnInit {
   dadosLivros: any = [];
-  interval: any;
 
   constructor(private service: AddBooksService, private router: Router) {}
 
-  getAllBooks(): void {
-    this.service.showLivros().subscribe(
+  getTodosLivros(): void {
+    this.service.pegarLivros().subscribe(
       (books: any) => {
         this.dadosLivros = books;
       },
@@ -25,7 +24,7 @@ export class LivrosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAllBooks();
+    this.getTodosLivros();
   }
 
   editar() {
@@ -33,7 +32,6 @@ export class LivrosComponent implements OnInit {
   }
 
   deletar(id: any) {
-    // console.log(this.dadosLivros);
 
     this.service.deletarLivro(id);
 

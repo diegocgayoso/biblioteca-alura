@@ -8,18 +8,11 @@ import { catchError, Observable, subscribeOn, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class AddBooksService {
-  // private LivrosAdd: any[];
   private url = 'http://localhost:3000/biblioteca';
 
-  constructor(private http: HttpClient) {
-    // this.LivrosAdd = [];
-  }
+  constructor(private http: HttpClient) {}
 
-  // get getLivros() {
-  //   return this.LivrosAdd;
-  // }
-
-  showLivros(): Observable<Biblioteca[]> {
+  pegarLivros(): Observable<Biblioteca[]> {
     return this.http.get<Biblioteca[]>(this.url).pipe(
       catchError(this.handleError)
     );
